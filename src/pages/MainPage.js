@@ -26,7 +26,7 @@ function MainPage() {
     }
 
     //* POST request to backend
-    const res = await axios.post("https://localhost:4000/users/new", {
+    const res = await axios.post("http://localhost:4000/users/signin", {
       email: emailInputref.current.value,
       password: passwordInputRef.current.value,
     });
@@ -49,7 +49,7 @@ function MainPage() {
     }
 
     //* POST request to backend
-    const res = await axios.post("https://localhost:4000/users/new", {
+    const res = await axios.post("http://localhost:4000/users/signin", {
       email: emailInputref.current.value,
       password: passwordInputRef.current.value,
     });
@@ -104,14 +104,15 @@ function MainPage() {
           <form
             onSubmit={handleSignUp}
             style={{
-              display: "flex",
-              flexDirection: "column",
+              // display: "flex",
+              // flexDirection: "column",
               padding: "10px",
             }}
           >
             <h3> Ready to train? </h3>
             <label htmlFor="name">Name</label>
             <input name="name" type="text" placeholder="Name" />
+            <br/>
 
             <label htmlFor="email"> Email</label>
             <input
@@ -121,6 +122,7 @@ function MainPage() {
               type="text"
               placeholder="Email"
             />
+            <br/>
 
             <label htmlFor="email"> Password </label>
             <input
@@ -130,13 +132,16 @@ function MainPage() {
               type="text"
               placeholder="password"
             />
+            <br/>
+
             <label htmlFor="sex"> Sex </label>
+         
             <label>
               <input
                 type="radio"
                 name="react-tips"
                 value="male"
-                checked={false}
+                checked={true}
                 className="form-check-input"
               />
               Male
@@ -145,17 +150,21 @@ function MainPage() {
                 type="radio"
                 name="react-tips"
                 value="female"
-                checked={false}
+                checked={true}
                 className="form-check-input"
               />
               Female
             </label>
+             <br/>
 
             <label htmlFor="height">Height</label>
             <input name="name" type="number" placeholder="Height (cm)" />
+            <br/>
 
             <label htmlFor="height">Weight</label>
             <input name="weight" type="number" placeholder="Weight (lb)" />
+            <br/>
+
             <label htmlFor="birthday">Birthday</label>
             <input name="birthday" type="date" placeholder="birthday" />
             <br />

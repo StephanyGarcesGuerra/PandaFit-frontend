@@ -1,13 +1,13 @@
 import {useState, useEffect} from "react";
 
 function ProfilePage (){
-    const [user,setUser] = useState({});
-    const [isUserUpdated, setIsUserUpdated] = useState(false);
-    const getProfileData = async()
+    // const [user,setUser] = useState({});
+    // const [isUserUpdated, setIsUserUpdated] = useState(false);
+    // const getProfileData = async()
 
     return(
         <div> 
-            <div className="profile-image">
+            {/* <div className="profile-image">
                 {user.avatarUrl ?(
                     <img src={`http://localhost:4000 ${user.avatarUrl}`} alt={`${user.email} avatar`} />
 
@@ -16,7 +16,7 @@ function ProfilePage (){
                 )
             }
 
-            </div>
+            </div> */}
             <h1> Profile </h1>
         </div>
 

@@ -3,7 +3,6 @@ function WorkoutGoal (){
     return(
         <div>
             
-               <h1> Workout Goals  </h1>
                 <br/>
                 <h3> What set up is most compatible with your lifestyle?</h3>
                 <label>

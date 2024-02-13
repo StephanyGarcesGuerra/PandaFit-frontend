@@ -1,14 +1,14 @@
 import NewUserGoal from "../components/NewUserGoal";
-import WorkoutGoal from "../components/WorkoutGoal";
 
-function NewUserPage (){
+function NewUserPage ({user, setUser}){
 
     return(
         <div>
             
                 <h3> Let's get to know your goals</h3>
-        <NewUserGoal />
-        <WorkoutGoal />
+        <NewUserGoal user={user} setUser={setUser} />
+        
+        
               
         
         </div>

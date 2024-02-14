@@ -8,8 +8,10 @@ import Navbar from "./components/Navbar";
 import { ThemeContext } from "./context/ThemeContext";
 import { UserContext } from "./context/UserContext";
 import NewUserPage from "./pages/NewUserPage";
-import ProfilePage from "./components/ProfilePage";
-import NewUserPage2 from "./pages/NewUserPage2";
+import ProfilePage from "./pages/ProfilePage";
+import WorkoutPage from "./pages/WorkoutPage";
+import JournalPage from "./pages/JournalPage"
+import UserPage from "./pages/UserPage";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -42,34 +44,53 @@ function App() {
           <img src={logo} className="logo" alt="logo" width={70} height={70} />
           <br />
           <br />
-{/* <NewUserPage/> */}
-          {/* <h5> Temperature: {weather.current.temp_f}°F, {weather.current.condition.text}</h5> 
-      <h5> Location: {weather.location.name}, {weather.location.region}</h5> */}
+  
+             <h5>
+            {" "}
+            Temperature: {weather?.current?.temp_f}°F,{" "}
+            {weather?.current?.condition.text}
+          </h5> 
+          <h5>
+            {" "}
+            Location: {weather?.location?.name}, {weather?.location?.region}
+          </h5>  
+          
 
           {user ? (
             <>
               {user.newUser ? (
                 <>
-                <NewUserPage user={user} setUser= {setUser} />
-               
+                  <NewUserPage user={user} setUser={setUser} />
+                  
                 </>
-              ) : (
-                <>
-                  <Navbar />
-                  <Routes>
-                    <Route path="/profile" element={<ProfilePage />}>
-                      {" "}
-                    </Route>
+              ) 
+              : (
+               <div>
+                <Routes>
+                <Route path="/" element={<UserPage/>}/>
+                    <Route path="/profile" element={<ProfilePage />}/>
+                    <Route path="/workouts" element={<WorkoutPage/>}/>
+                    {/* <Route path='/workouts' element ={<WorkoutPage workouts={workouts}/>}/> */}
+                    <Route path = "/journal" element ={<JournalPage/>}/>
+                    
                   </Routes>
-                </>
-              )}{" "}
+            
+               </div>
+              )
+              }
             </>
-          ) : (
+          ) :
+           (
             <>
-              <Routes>
-                <Route path="/" element={<MainPage />} />
-                {/* <Route path = "/use/:id" element={} */}
-              </Routes>
+            {/* <Navbar/> */}
+               <Routes>
+                <Route path="/" element={<MainPage/>}/>
+                    <Route path="/userpage" element={<UserPage/> }/>
+                    <Route path="/profile" element={<ProfilePage />}/>
+                    <Route path="/workouts" element={<WorkoutPage/>}/>
+                    {/* <Route path='/workouts' element ={<WorkoutPage workouts={workouts}/>}/> */}
+                    <Route path = "/journal" element ={<JournalPage/>}/>
+                  </Routes>
             </>
           )}
         </div>

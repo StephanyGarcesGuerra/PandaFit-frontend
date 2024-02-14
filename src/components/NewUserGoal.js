@@ -1,10 +1,11 @@
 import { useState } from "react";
+import axios from "axios";
 
 function NewUserGoal({user, setUser}) {
   const [goals, setGoals] = useState("");
   const [lifestyle, setLifestyle] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(goals, lifestyle);
     setUser(user => {
@@ -13,6 +14,8 @@ function NewUserGoal({user, setUser}) {
             newUser: false
         }
     })
+    //*Make a request to backend to update the newUser to false
+    await axios.put(`http://localhost:4000/users/${user._id}/update`,{newUser:false})
   };
 
   return (

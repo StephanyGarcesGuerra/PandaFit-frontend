@@ -8,6 +8,11 @@ function MainPage() {
 
   const emailInputref = useRef([]);
   const passwordInputRef = useRef([]);
+  const heightInputRef = useRef([]);
+  const weightInputRef = useRef ([]);
+  const nameInputRef = useRef([]);
+  const sexInputRef = useRef([]);
+  const birthdayInputRef = useRef([]);
 
   const [showSignUp, setShowSignUp] = useState(false);
 
@@ -49,9 +54,13 @@ function MainPage() {
     }
 
     //* POST request to backend
-    const res = await axios.post("http://localhost:4000/users/signin", {
+    const res = await axios.post("http://localhost:4000/users/new", {
       email: emailInputref.current.value,
       password: passwordInputRef.current.value,
+      sex: sexInputRef.current.value,
+      height: heightInputRef.current.value,
+      weight: weightInputRef.current.value,
+      birthday: birthdayInputRef.current.value,
     });
     console.log(res.data);
     setUser(res.data);
@@ -111,7 +120,7 @@ function MainPage() {
           >
             <h3> Ready to train? </h3>
             <label htmlFor="name">Name</label>
-            <input name="name" type="text" placeholder="Name" />
+            <input name="name" ref={nameInputRef} type="text" placeholder="Name" />
             <br/>
 
             <label htmlFor="email"> Email</label>
@@ -139,34 +148,33 @@ function MainPage() {
             <label>
               <input
                 type="radio"
-                name="react-tips"
+                name="sex"
                 value="male"
                 checked={true}
-                className="form-check-input"
+                ref={sexInputRef}
               />
               Male
 
               <input
                 type="radio"
-                name="react-tips"
+                name="sex"
                 value="female"
                 checked={true}
-                className="form-check-input"
-              />
+                ref={sexInputRef}              />
               Female
             </label>
              <br/>
 
             <label htmlFor="height">Height</label>
-            <input name="name" type="number" placeholder="Height (cm)" />
+            <input name="height" ref={heightInputRef} type="number" placeholder="Height (cm)" />
             <br/>
 
             <label htmlFor="height">Weight</label>
-            <input name="weight" type="number" placeholder="Weight (lb)" />
+            <input name="weight" ref={weightInputRef} type="number" placeholder="Weight (lb)" />
             <br/>
 
             <label htmlFor="birthday">Birthday</label>
-            <input name="birthday" type="date" placeholder="birthday" />
+            <input name="birthday"ref={birthdayInputRef}type="date" placeholder="birthday" />
             <br />
 
             <button type="submit"> Sign Up </button>

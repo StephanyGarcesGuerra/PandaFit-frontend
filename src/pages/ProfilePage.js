@@ -18,11 +18,14 @@ function ProfilePage() {
       <div>
       <br/>
       <br/>
+      
         <h6> Name: {userCtx.user.name}</h6>
         <h6> Email: {userCtx.user.email}</h6>
         <h6> Height: {userCtx.user.height} cm</h6>
-        <h6> Weight:{userCtx.user.weight} lb </h6>{" "}
+        <h6> Weight:{userCtx.user.weight} lb </h6>{" "} 
         <button> Update Weight?</button>
+        <button> Update Information?</button>
+
       </div>
 
     <br/>

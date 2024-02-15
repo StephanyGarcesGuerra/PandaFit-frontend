@@ -59,6 +59,9 @@ function NewUserGoal({user, setUser}) {
           />
           Build muscle and lose fat
         </label>
+        <br/>
+        <br/>
+        <br/>
 
         <h3> What set up is most compatible with your lifestyle?</h3>
         <label>

@@ -8,9 +8,9 @@ function UserPage (){
                 <h3> User Page</h3>
                 <Navbar />
 
+                <button className="logOut"> Log Out </button>
                 <h4> User Page Under Construction</h4>
                 <h6> Will be available soon! </h6>
-                <button> Log Out </button>
         
         </div>
     )

@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logo from "./images/pandafit.avif";
 import MainPage from "./pages/MainPage";
-import Navbar from "./components/Navbar";
 
 import { ThemeContext } from "./context/ThemeContext";
 import { UserContext } from "./context/UserContext";
@@ -40,7 +39,7 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <div className="App">
-          <h1> PandaFit</h1>
+          <h1 className="title"> PandaFit</h1>
           <img src={logo} className="logo" alt="logo" width={70} height={70} />
           <br />
           <br />
@@ -72,6 +71,7 @@ function App() {
                     <Route path="/workouts" element={<WorkoutPage/>}/>
                     {/* <Route path='/workouts' element ={<WorkoutPage workouts={workouts}/>}/> */}
                     <Route path = "/journal" element ={<JournalPage/>}/>
+                    <Route path="/userpage" element={<UserPage/>}/>
                     
                   </Routes>
             
@@ -93,6 +93,11 @@ function App() {
                   </Routes>
             </>
           )}
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
         </div>
       </ThemeContext.Provider>
     </UserContext.Provider>
